@@ -13,13 +13,23 @@ and open the template in the editor.
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="ajaxupload.min.js" type="text/javascript"></script>    
         <script type="text/javascript" src="JS.js"></script>
     </head>
     
     <body>
         <div id="IncludedHeader"></div>    
-        
-        <div id="Gebruikersprofielen">
+        <div id="IncludedMenu"></div>
+        <div id="content">
+            <div id="photoupload">
+                <img src="" alt="thumb"/>
+                <form action="/playground/ajax_upload" id="selectphoto">
+                    <label>Upload jouw foto!</label><br>
+                    <input type="file" ><br>
+                    <button type="submit">Opslaan</button>
+                </form>   
+            </div>
+            <div id="Gebruikersprofielen">
                 <form action="....." method="post">
                     Naam:<br>
                     <input type="text" name="naam"/><br>
@@ -32,10 +42,7 @@ and open the template in the editor.
                     
                     Geboortedatum:<br>
                     <input type="date" id="datepicker"/><br>
-                    
-                    Foto:<br>
-                    <input type="image" src="images.f/jpg" alt="image"/><br>
-                    
+                              
                     Beschrijving: <br>
                     <input type="text" name="beschrijving" value="beschrijving"/><br>
                     
@@ -56,9 +63,10 @@ and open the template in the editor.
                     Merkvoorkeuren:<br>
                     <div id="brand">
                         <input type="checkbox" id="brands"><label>merken</label>
-                    </div><br>
-                    
+                    </div>
+                    <button type="submit">Opslaan</button>
                 </form>
+            </div>
         </div>
         
         <div id="IncludedFooter"></div>

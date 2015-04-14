@@ -7,9 +7,9 @@
 //slider voor leeftijd
 $(function(){
     $("#slider-age").slider({
-        min: 35,
-        max: 45,
-        values: [18, 99],
+        min: 18,
+        max: 99,
+        values: [35, 45],
         slide: function(event, ui){
             $("#age").val(ui.value[0] + " - " + ui.values[1]);
         }
@@ -22,7 +22,7 @@ $(function(){
     $("#brands").buttonset();
 });
 
-//geboortedatum
+//geboortedatum datepicker
 $(function(){
     $("#datepicker").datepicker({
         changeMonth: true,
@@ -31,13 +31,14 @@ $(function(){
     });
 });
 
-//oude code
+//inladen menu, footer en header
 $(function(){
     $("#IncludedHeader").load("header.html");
     $("#IncludedFooter").load("footer.html");
+    $("#IncludedMenu").load("menu.html");
 });
 
-//vragen van volgorde veranderen
+//shuffle vraag volgorde
 var list = document.getElementById("test"),
         button = document.getElementById("shuffle");
 function shuffle(items)
@@ -65,3 +66,29 @@ function shuffleNodes()
     }
 }
 button.onclick = shuffleNodes;
+
+//corners
+$(footer).corner("bevelfold");
+$(footer).corner("bottom");
+$(content).corner("bevelfold");
+$(content).corner("top");
+
+//foto upload
+$(document).ready(function(){
+    var thumb = $('#thumb');
+    
+    new AjaxUpload('imageUpload', {
+        action: $('#selectfoto').attr('action'),
+        name: 'image',
+        onSubmit: function(file, extension) {
+            $('#preview').addClass('loading');
+        },
+        onComplete: function(file, response) {
+            thumb.load(function(){
+                $('#preview').removeClass('loading');
+                thumb.unbind();
+            });
+            thumb.attr('src', response);
+        }
+    });
+});
