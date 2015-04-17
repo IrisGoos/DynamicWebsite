@@ -67,11 +67,6 @@ function shuffleNodes()
 }
 button.onclick = shuffleNodes;
 
-//corners
-$(footer).corner("bevelfold");
-$(footer).corner("bottom");
-$(content).corner("bevelfold");
-$(content).corner("top");
 
 //foto upload
 $(document).ready(function(){
@@ -92,3 +87,17 @@ $(document).ready(function(){
         }
     });
 });
+
+//testen
+$(document).ready(function(){
+    $('input[type=radio]').click(function(){
+        var vragen = $(this).attr('vragen');
+        
+        if ('!vragen')
+            return;
+        
+        var checked = $(this).is(':checked');
+        
+        $("input")
+    })
+})

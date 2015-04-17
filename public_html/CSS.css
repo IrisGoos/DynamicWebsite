@@ -68,3 +68,7 @@ body {
 .menuitems:active ul > li > a {
     background-color: #FFBBCC;
 }
+    
+.testvragen {
+    display: inline-block;
+}
