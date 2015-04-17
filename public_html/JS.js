@@ -88,16 +88,108 @@ $(document).ready(function(){
     });
 });
 
-//testen
-$(document).ready(function(){
-    $('input[type=radio]').click(function(){
-        var vragen = $(this).attr('vragen');
-        
-        if ('!vragen')
-            return;
-        
-        var checked = $(this).is(':checked');
-        
-        $("input")
-    })
-})
+// types
+function IEberekenen(x) {
+    x = 50 + 10 * $('.E:checked').Length - 10 * $('.I:checked').Length;
+};
+
+function NSberekenen(y) {
+    y = 50 + 12,5 * $('.N:checked').Length - 12,5 * $('.S:checked').Length;
+};
+
+function TFberekenen(z) {
+    z = 50 + 12,5 * $('.T:checked').Length - 12,5 * $('.F:checked').Length;
+};
+
+function JPberekenen(v) {
+    v = 50 + 8,33333 * $('.J:checked').Length - 8,33333 * $('.P:checked').Length;
+};
+
+//type bepalen
+function Type () {
+    function EI (E, I, x) {
+        if (x <= 50) {
+            return E, x;
+        }
+        else {
+            x = 100 - x;
+            return I, x;
+        }
+    };
+    function NS (N, S, y) {
+        if (y <= 50) {
+            return N, y;
+        }
+        else {
+            y = 100 - y;
+            return S, y;
+        }
+    };
+    function TF (T, F, z) {
+        if (z <= 50) {
+            return T, z;
+        }
+        else {
+            z = 100 - z;
+            return F, z;
+        }
+    };
+    function JP (J, P, v) {
+        if (v <= 50) {
+            return J, v;
+        }
+        else {
+            v = 100 - v;
+            return P, v;
+        }
+    };
+};
+
+function Yourtype (){
+    Type ();
+    }
+
+
+function OppositeType (){
+
+function typeIE (I, E, xx, x){
+    xx = 100 - x;
+    if (xx <= 50) {
+        E = xx;
+    }
+    else {
+        I = 100 - xx;
+    }
+};
+
+function typeNS (N, S, yy, y){
+    yy = 100 - y;
+    if (yy <= 50) {
+        N = yy;
+    }
+    else {
+        S = 100 - yy;
+    }
+};
+
+function typeJP (J, P, vv, v){
+    vv = 100 - v;
+    if (vv <= 50) {
+        J = vv;
+    }
+    else {
+        P = 100 - yy;
+    }
+};
+
+function typeTF (T, F, zz, z){
+    zz = 100 - z;
+    if (zz <= 50) {
+        T = zz;
+    }
+    else {
+        F = 100 - zz;
+    }
+};
+
+};
